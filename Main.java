@@ -84,6 +84,8 @@ class Main
 		cekPermukaanDaunTidakRata();
 		cekDaunKakuRapuh();
 		cekBungaTidakTerbentuk();
+
+		diagnosa();
 	}
 
 	public static void cekBungaTidakTerbentuk()
@@ -193,7 +195,7 @@ class Main
 	}
 
 	public static void cekBatangKecoklatan() {
-		boolean[] rule = {false, false, false, true, false, false, false};
+		boolean[] rule = {false, false, false, false, true, false, false};
 		tanya(rule, "apakah batang berwarna kecoklatan?");
 	}
 
@@ -270,10 +272,10 @@ class Main
 			System.out.println(pertanyaan);
 			System.out.println("1. ya\n2. tidak");
 			int jawaban = mintaPilihan(1, 2);
-			if (jawaban == 1)
-				penyakit = eliminasiYangTidak(rule);
-			else
+			if (jawaban == 2)
 				penyakit = eliminasiYangIya(rule);
+			//else
+			//	penyakit = eliminasiYangTidak(rule);
 		}
 	}
 
@@ -306,6 +308,7 @@ class Main
 	}
 	*/
 
+	/*
 	public static boolean[] eliminasiYangTidak(boolean[] rule)
 	{
 		for (int i = 0; i < 7; ++i)
@@ -313,6 +316,7 @@ class Main
 				penyakit[i] = false;
 		return penyakit;
 	}
+	*/
 
 	public static boolean[] eliminasiYangIya(boolean[] rule)
 	{
