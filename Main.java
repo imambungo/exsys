@@ -4,6 +4,7 @@ class Main
 {
 	static Scanner sc = new Scanner(System.in);
 	static boolean[] penyakit = new boolean[7];
+	static boolean[] gejalaDitemukan = new boolean[7];
 
 	public static void main(String[] args)
 	{
@@ -12,8 +13,10 @@ class Main
 
 	public static void exsysTembakau()
 	{
-		for (int i = 0; i < 7; ++i)
+		for (int i = 0; i < 7; ++i) {
 			penyakit[i] = true;
+			gejalaDitemukan[i] = false;
+		}
 
 		System.out.println("apakah masih berbentuk tunas?");
 		System.out.println("1. ya\n2. tidak");
@@ -274,9 +277,16 @@ class Main
 			int jawaban = mintaPilihan(1, 2);
 			if (jawaban == 2)
 				penyakit = eliminasiYangIya(rule);
-			//else
-			//	penyakit = eliminasiYangTidak(rule);
+			else
+				tandaiGejalaDitemukan(rule);
 		}
+	}
+
+	public static void tandaiGejalaDitemukan(boolean[] rule)
+	{
+		for (int i = 0; i < 7; ++i)
+			if (rule[i])
+				gejalaDitemukan[i] = true;
 	}
 
 	public static boolean adaYangTrue(boolean[] rule)
