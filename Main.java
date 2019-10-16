@@ -26,6 +26,7 @@ class Main
 
 	public static int mintaPilihan(int minimum, int maksimum)
 	{
+		System.out.print("jawaban: ");
 		int pilihan = minimum - 1;
 		pilihan = sc.nextInt();
 		while (pilihan < minimum || pilihan > maksimum)
@@ -128,7 +129,7 @@ class Main
 
 	public static void tanya(boolean[] rule, String pertanyaan)
 	{
-		if (adaPerbedaan(rule)) {
+		if (adaYangTrue(rule)) {
 			System.out.println(pertanyaan);
 			System.out.println("1. ya\n2. tidak");
 			int jawaban = mintaPilihan(1, 2);
@@ -139,6 +140,15 @@ class Main
 		}
 	}
 
+	public static boolean adaYangTrue(boolean[] rule)
+	{
+		for (int i = 0; i < 7; ++i)
+			if (penyakit[i] && rule[i])
+				return true;
+		return false;
+	}
+
+	/*
 	public static boolean adaPerbedaan(boolean[] rule)
 	{
 		boolean penyakitPertamaYangTrue = true;
@@ -157,6 +167,7 @@ class Main
 		}
 		return false;
 	}
+	*/
 
 	public static boolean[] eliminasiYangTidak(boolean[] rule)
 	{
