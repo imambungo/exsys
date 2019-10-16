@@ -20,8 +20,8 @@ class Main
 		int jawaban = mintaPilihan(1, 2);
 		if (jawaban == 1)
 			expertTunas();
-		//else
-		//	expertBatangDaun();
+		else
+			expertBatangDaun();
 	}
 
 	public static int mintaPilihan(int minimum, int maksimum)
@@ -54,11 +54,155 @@ class Main
 			cekBintikCoklatPadaDaun();
 			cekBintikPutih();
 
-			if (adaPenyakit())
-				tampilkanPenyakit();
-			else
-				System.out.println("tidak ada penyakit yang cocok");
+			diagnosa();
 		}
+	}
+
+	public static void expertBatangDaun()
+	{
+		// Batang
+		cekAreaDekatPermukaanTanah();
+		cekBatangLunakTidakKokoh();
+		cekBatangHitamBusuk();
+		cekLukaPadaBatang();
+		cekBatangKecoklatan();
+
+		// Daun
+		cekBintikPutihTepianCoklat();
+		cekBintikCoklat();
+		cekBintikMenyebabkanKeringLayu();
+		cekLukaDaun();
+		cekLukaCoklatTepianHijau();
+		cekBentukLukaTidakBeraturan();
+		cekLukaBintikBasah();
+		cekDaunLayu();
+		cekDaunBercakMosaik();
+		cekDaunMelepuh();
+		cekDaunMengkerut();
+		cekDaunMenggulung();
+		cekTulangDaunBerkelok();
+		cekPermukaanDaunTidakRata();
+		cekDaunKakuRapuh();
+		cekBungaTidakTerbentuk();
+	}
+
+	public static void cekBungaTidakTerbentuk()
+	{
+		boolean[] rule = {false, false, false, false, false, false, true};
+		tanya(rule, "apakah bunga tidak terbentuk?");
+	}
+
+	public static void cekDaunKakuRapuh()
+	{
+		boolean[] rule = {false, false, false, false, false, false, true};
+		tanya(rule, "apakah daun kaku dan rapuh?");
+	}
+
+	public static void cekPermukaanDaunTidakRata()
+	{
+		boolean[] rule = {false, false, false, false, false, false, true};
+		tanya(rule, "apakah permukaan daunnya tidak rata?");
+	}
+
+	public static void cekTulangDaunBerkelok()
+	{
+		boolean[] rule = {false, false, false, false, false, false, true};
+		tanya(rule, "apakah tulang daunnya berkelok?");
+	}
+
+	public static void cekDaunMenggulung()
+	{
+		boolean[] rule = {false, false, false, false, false, false, true};
+		tanya(rule, "apakah daunnya menggulung ke bawah?");
+	}
+
+	public static void cekDaunMengkerut()
+	{
+		boolean[] rule = {false, false, false, false, false, true, false};
+		tanya(rule, "apakah daunnya mengkerut?");
+	}
+
+	public static void cekDaunMelepuh() {
+		boolean[] rule = {false, false, false, false, false, true, false};
+		tanya(rule, "apakah daun terlihat melepuh?");
+	}
+
+	public static void cekDaunBercakMosaik() {
+		boolean[] rule = {false, false, false, false, false, true, false};
+		tanya(rule, "apakah daun memiliki bercak mosaik?");
+	}
+
+	public static void cekDaunLayu() {
+		boolean[] rule = {false, false, false, false, true, false, false};
+		tanya(rule, "apakah ada daun yang layu?");
+	}
+
+	public static void cekLukaBintikBasah() {
+		boolean[] rule = {false, false, true, true, false, false, false};
+		tanya(rule, "apakah ada luka/bintik basah?");
+	}
+
+	public static void cekBentukLukaTidakBeraturan() {
+		boolean[] rule = {false, false, true, false, false, false, false};
+		tanya(rule, "apakah ada bentuk luka tidak beraturan?");
+	}
+
+	public static void cekLukaCoklatTepianHijau() {
+		boolean[] rule = {false, false, true, false, false, false, false};
+		tanya(rule, "apakah ada luka coklat dengan tepian hitam?");
+	}
+
+	public static void cekLukaDaun() {
+		boolean[] rule = {false, false, true, true, false, false, false};
+		tanya(rule, "apakah ada luka pada daun?");
+	}
+
+	public static void cekBintikMenyebabkanKeringLayu() {
+		boolean[] rule = {false, true, false, false, false, false, false};
+		tanya(rule, "apakah bintik menyebabkan daun kering dan layu?");
+	}
+
+	public static void cekBintikCoklat() {
+		boolean[] rule = {false, true, false, false, false, false, false};
+		tanya(rule, "apakah ada bintik coklat?");
+	}
+
+	public static void cekBintikPutihTepianCoklat() {
+		boolean[] rule = {false, true, false, true, false, false, false};
+		tanya(rule, "apakah ada bintik putih dengan tepian coklat?");
+	}
+
+	public static void cekAreaDekatPermukaanTanah() {
+		boolean[] rule = {true, false, false, false, false, false, false};
+		tanya(rule, "apakah di area dekat permukaan tanah?");
+	}
+
+	public static void cekBatangLunakTidakKokoh() {
+		boolean[] rule = {true, false, false, true, false, false, false};
+		tanya(rule, "apakah batang lunak dan tidak kokoh?");
+	}
+
+	public static void cekBatangHitamBusuk() {
+		boolean[] rule = {false, false, true, false, false, false, false};
+		tanya(rule, "apakah batang hitam dan busuk?");
+	}
+
+	public static void cekLukaPadaBatang() {
+		boolean[] rule = {false, false, false, true, false, false, false};
+		tanya(rule, "apakah ada luka pada batang?");
+	}
+
+	public static void cekBatangKecoklatan() {
+		boolean[] rule = {false, false, false, true, false, false, false};
+		tanya(rule, "apakah batang berwarna kecoklatan?");
+	}
+
+	public static void diagnosa()
+	{
+		if (adaPenyakit())
+			tampilkanPenyakit();
+		else
+			System.out.println("tidak ada penyakit yang cocok");
 	}
 
 	public static void cekBijiMembusuk() {
@@ -96,7 +240,6 @@ class Main
 		for (int i = 0; i < 7; ++i)
 			if (penyakit[i])
 				return true;
-
 		return false;
 	}
 
@@ -168,7 +311,6 @@ class Main
 		for (int i = 0; i < 7; ++i)
 			if (rule[i] == false)
 				penyakit[i] = false;
-
 		return penyakit;
 	}
 
@@ -177,7 +319,6 @@ class Main
 		for (int i = 0; i < 7; ++i)
 			if (rule[i])
 				penyakit[i] = false;
-
 		return penyakit;
 	}
 }
