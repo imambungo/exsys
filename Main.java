@@ -48,53 +48,47 @@ class Main
 			System.out.println("penyakit: Damping Off");
 		} else {
 			cekBijiMembusuk();
+			cekTunasBerlekuk();
+			cekTunasLembabTidakKokoh();
+			cekTunasDekatPermukaanTanahRusak();
+			cekBintikCoklatPadaDaun();
+			cekBintikPutih();
+
+			if (adaPenyakit())
+				tampilkanPenyakit();
+			else
+				System.out.println("tidak ada penyakit yang cocok");
 		}
 	}
 
-	public static void cekBijiMembusuk()
-	{
+	public static void cekBijiMembusuk() {
 		boolean[] rule = {true, false, false, false, false, false, false};
-
 		tanya(rule, "apakah bijinya membusuk?");
-		cekTunasBerlekuk();
 	}
 
-	public static void cekTunasBerlekuk()
-	{
+	public static void cekTunasBerlekuk() {
 		boolean[] rule = {true, false, false, false, false, false, false};
 		tanya(rule, "apakah tunasnya berlekuk?");
-		cekTunasLembabTidakKokoh();
 	}
 
-	public static void cekTunasLembabTidakKokoh()
-	{
+	public static void cekTunasLembabTidakKokoh() {
 		boolean[] rule = {true, false, false, false, false, false, false};
 		tanya(rule, "apakah tunasnya lembab dan tidak kokoh?");
-		cekTunasDekatPermukaanTanahRusak();
 	}
 
-	public static void cekTunasDekatPermukaanTanahRusak()
-	{
+	public static void cekTunasDekatPermukaanTanahRusak() {
 		boolean[] rule = {true, false, false, false, false, false, false};
 		tanya(rule, "apakah tunasnya dekat permukaan tanah rusak?");
-		cekBintikCoklatPadaDaun();
 	}
 
-	public static void cekBintikCoklatPadaDaun()
-	{
+	public static void cekBintikCoklatPadaDaun() {
 		boolean[] rule = {false, true, false, false, false, false, false};
 		tanya(rule, "apakah terdapat bintik coklat pada daun yang berukuran 2-10mm?");
-		cekBintikPutih();
 	}
 
-	public static void cekBintikPutih()
-	{
+	public static void cekBintikPutih() {
 		boolean[] rule = {false, true, false, false, false, false, false};
 		tanya(rule, "apakah terdapat bintik putih yang dikelilingi tepian coklat?");
-		if (adaPenyakit())
-			tampilkanPenyakit();
-		else
-			System.out.println("tidak ada penyakit yang cocok");
 	}
 
 	public static boolean adaPenyakit()
