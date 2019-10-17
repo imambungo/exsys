@@ -68,10 +68,10 @@ class Main
 	{
 		// Batang
 		cekAreaDekatPermukaanTanah();
-		cekBatangLunakTidakKokoh();
 		cekBatangHitamBusuk();
-		cekLukaPadaBatang();
 		cekBatangKecoklatan();
+		cekBatangLunakTidakKokoh();
+		cekLukaPadaBatang();
 
 		// Daun
 		cekBintikPutihTepianCoklat();
