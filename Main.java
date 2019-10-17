@@ -48,7 +48,10 @@ class Main
 		System.out.println("1. ya\n2. tidak");
 		int jawaban = mintaPilihan(1, 2);
 		if (jawaban == 2) {
-			System.out.println("penyakit: Damping Off");
+			System.out.println(
+				"penyakit:\nDamping Off" +
+				"\n\tTidak bisa disembuhkan, tetapi bisa dicegah dengan cara menjaga sirkulasi udara di tempat pembibitan selalu baik. Supaya sirkulasi udara bagus, bisa diberi kipas angin kecil, atau pastikan tempat pembibitan tidak tergenang air."
+			);
 		} else {
 			cekBijiMembusuk();
 			cekTunasBerlekuk();
@@ -252,21 +255,56 @@ class Main
 	{
 		System.out.println("Berikut penyakitnya:");
 		for (int i = 0; i < 7; ++i)
-			if (penyakit[i])
+			if (penyakit[i] && gejalaDitemukan[i])
 				if (i == 0)
-					System.out.println("Damping Off");
+					System.out.println(
+						"\nDamping Off" +
+						"\n\tTidak bisa disembuhkan, tetapi bisa dicegah dengan cara menjaga sirkulasi udara di tempat pembibitan selalu baik. Supaya sirkulasi udara bagus, bisa diberi kipas angin kecil, atau pastikan tempat pembibitan tidak tergenang air."
+					);
 				else if (i == 1)
-					System.out.println("Frog Eye Leaf");
+					System.out.println(
+						"\nFrog Eye Leaf" +
+						"\n\t- Daun yang telah terinfeksi harus dipotong agar tidak menyebar ke daun lainnya." +
+						"\n\t- Pemberian pupuk harus seimbang, karena pemberian pupuk yang berlebihan juga meningkatkan probabilitas terkena penyakit ini." +
+						"\n\t- Jika diperlukan gunakan fungisida seperti mancozeb, copper atau chlorothanonil."
+					);
 				else if (i == 2)
-					System.out.println("Leaf Blight");
+					System.out.println(
+						"\nLeaf Blight" +
+						"\n\t- Fungsida yang digunakan perpaduan dari Orondis Gold 200 +  Oxathiapiprolin 18.7%" +
+						"\n\t- Pemupukan dan irigasi haruslah dikelola dengan baik." +
+						"\n\t- Peralatan kebun yg digunakan pada tumbuhan yang terinfeksi harus dibersihkan terlebih dahulu sebelum digunakan ke tumbuhan yang sehat."
+					);
 				else if (i == 3)
-					System.out.println("Anthracnose");
+					System.out.println(
+						"\nAnthracnose" +
+						"\n\t- Singkirkan tumbuhan yang terinfeksi." +
+						"\n\t- Semprotkan cooper-based fungisida." +
+						"\n\t- Tanam tumbuhan di tanah yang pengairan nya bagus."
+					);
 				else if (i == 4)
-					System.out.println("Fusarium Wilz");
+					System.out.println(
+						"\nFusarium Wilz" +
+						"\n\t- Hilangkan bagian yang terinfeksi, tools yang digunakan harus steril." +
+						"\n\t- Gunakan pupuk yang kadar nitrogennya tidak terlalu tinggi." +
+						"\n\t- Gunakan fungisida Mycostop."
+					);
 				else if (i == 5)
-					System.out.println("Tobacco Mosaic");
+					System.out.println(
+						"\nTobacco Mosaic" +
+						"\n\t- Menghindari lahan bekas tanaman inang yang terserang penyakit tmv." +
+						"\n\t- Melakukan sanitasi, bertujuan membersihkan inokulan dengan mencabut tanaman yg sakit, tanamam inang lain dan membersihkan peralatan." +
+						"\n\t- Rotasi dengan tanamam bukan inang, Penyemprotan vektor dengan insektisida." +
+						"\n\t- Pembersihan gulma juga mampu menekan tmv."
+					);
 				else if (i == 6)
-					System.out.println("Tobacco Leaf Curl");
+					System.out.println(
+						"\nTobacco Leaf Curl" +
+						"\n\t- Mengendalikan serangga vektor, misalnya dengan asefat atau imidakloprit 2x (saat tanam dan 45 hari setelah tanam)." +
+						"\n\t- Menanam bunga matahari atau jarak kepyar sebagai pagar pembatas di sekitar bedengan untuk mencegah B. tabaci." +
+						"\n\t- Memilih varietas-varietas yang tahan akan penyakit TLCV." +
+						"\n\t- Pemberian abu sekam, abu tomang atau tepung sisa bakaran arang pada lahan pembibitan atau lahan tanam dimaksudkan untuk menghambat penyebaran penyakit ini."
+					);
 	}
 
 	public static void tanya(boolean[] rule, String pertanyaan)
