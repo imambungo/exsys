@@ -246,7 +246,7 @@ class Main
 	public static boolean adaPenyakit()
 	{
 		for (int i = 0; i < 7; ++i)
-			if (penyakit[i])
+			if (penyakit[i] && gejalaDitemukan[i])
 				return true;
 		return false;
 	}
